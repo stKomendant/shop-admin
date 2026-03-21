@@ -1,4 +1,4 @@
-import type { Product } from "../../types/product";
+import type { Product } from "@/app/types/product";
 
 type Props = {
   product: Product;
@@ -6,7 +6,7 @@ type Props = {
 
 const ProductCard = ({ product }: Props) => {
   return (
-    <div className="bg-white p-4 rounded-lg shadow transition hover:shadow-lg hover:-translate-y-1">
+    <div className="bg-white p-4 rounded-lg shadow">
       <img src={product.image} className="w-full h-40 object-cover rounded" />
 
       <h3 className="mt-3 font-semibold">{product.name}</h3>
