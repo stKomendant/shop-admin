@@ -7,7 +7,7 @@ type Props = {
 
 const ProductCard = ({ product, addToCart }: Props) => {
   return (
-    <div className="bg-white p-4 rounded-xl shadow-md transition duration-300 hover:shadow-xl hover:-translate-y-1">
+    <div className="border-1 bg-fuchsia-200  p-4 rounded-xl shadow-md transition duration-300 hover:shadow-xl hover:-translate-y-1">
       <Link to={`/product/${product.id}`}>
         <img
           src={product.image}

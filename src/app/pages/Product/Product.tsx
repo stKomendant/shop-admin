@@ -1,4 +1,5 @@
 import { useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { products } from "@/app/data/products";
 import type { typeProduct } from "@/app/types/typeProduct";
 
@@ -8,6 +9,7 @@ type Props = {
 
 const ProductPage = ({ addToCart }: Props) => {
   const { id } = useParams();
+  const navigate = useNavigate();
 
   const product = products.find((p) => p.id === Number(id));
 
@@ -15,7 +17,13 @@ const ProductPage = ({ addToCart }: Props) => {
 
   return (
     <div className="p-8 flex justify-center">
-      <div className="bg-white rounded-2xl shadow-lg p-8 max-w-5xl w-full grid md:grid-cols-2 gap-10">
+      <div className="border-2 bg-fuchsia-200 rounded-2xl shadow-lg p-8 max-w-5xl w-full grid md:grid-cols-2 gap-10">
+        <button
+          onClick={() => navigate(-1)}
+          className="mb-6 absolute text-violet-600 hover:underline cursor-pointer"
+        >
+          ← Back
+        </button>
         <div className="flex justify-center items-center">
           <img
             src={product.image}

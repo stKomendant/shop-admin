@@ -1,10 +1,11 @@
 import { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-
+import MainLayout from "@/app/layouts/MainLayout";
 import Navbar from "@/app/components/Navbar/Navbar";
 import Home from "@/app/pages/Home/Home";
 import Cart from "@/app/pages/Сart/Cart";
 import Product from "@/app/pages/Product/Product";
+import Login from "./app/pages/Auth/Login";
 
 import type { typeProduct } from "@/app/types/typeProduct";
 
@@ -21,20 +22,23 @@ function App() {
 
   return (
     <BrowserRouter>
-      <Navbar cartCount={cart.length} />
+      <MainLayout>
+        <Navbar cartCount={cart.length} />
 
-      <Routes>
-        <Route path="/" element={<Home addToCart={addToCart} />} />
+        <Routes>
+          <Route path="/" element={<Home addToCart={addToCart} />} />
 
-        <Route
-          path="/cart"
-          element={<Cart cart={cart} removeFromCart={removeFromCart} />}
-        />
-        <Route
-          path="/product/:id"
-          element={<Product addToCart={addToCart} />}
-        />
-      </Routes>
+          <Route
+            path="/cart"
+            element={<Cart cart={cart} removeFromCart={removeFromCart} />}
+          />
+          <Route
+            path="/product/:id"
+            element={<Product addToCart={addToCart} />}
+          />
+          <Route path="/login" element={<Login />} />
+        </Routes>
+      </MainLayout>
     </BrowserRouter>
   );
 }
