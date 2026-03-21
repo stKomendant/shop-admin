@@ -1,4 +1,4 @@
-import type { typeProduct } from "../../types/typeProduct";
+import type { typeProduct } from "@/app/types/typeProduct";
 import { Link } from "react-router-dom";
 type Props = {
   product: typeProduct;
@@ -7,11 +7,11 @@ type Props = {
 
 const ProductCard = ({ product, addToCart }: Props) => {
   return (
-    <div className="bg-white p-4 rounded-lg shadow">
+    <div className="bg-white p-4 rounded-xl shadow-md transition duration-300 hover:shadow-xl hover:-translate-y-1">
       <Link to={`/product/${product.id}`}>
         <img
           src={product.image}
-          className="w-full h-40 object-cover rounded cursor-pointer"
+          className="w-full h-40 object-cover rounded transition duration-300 hover:scale-105"
         />
       </Link>
 
@@ -21,7 +21,7 @@ const ProductCard = ({ product, addToCart }: Props) => {
 
       <button
         onClick={() => addToCart(product)}
-        className="mt-3 w-full bg-violet-600 text-white py-2 rounded cursor-pointer"
+        className="mt-3 w-full bg-gradient-to-r from-violet-600 to-purple-500 text-white py-2 rounded-lg font-semibold transition hover:opacity-90 cursor-pointer"
       >
         Add to cart
       </button>
