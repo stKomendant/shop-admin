@@ -1,9 +1,9 @@
 import ProductCard from "@/app/components/ProductCard/ProductCard";
 import { products } from "@/app/data/products";
-import type { Product } from "@/app/types/product";
+import type { typeProduct } from "@/app/types/typeProduct";
 
 type Props = {
-  addToCart: (product: Product) => void;
+  addToCart: (product: typeProduct) => void;
 };
 
 const Home = ({ addToCart }: Props) => {

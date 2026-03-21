@@ -1,7 +1,7 @@
-import type { Product } from "@/app/types/product";
+import type { typeProduct } from "@/app/types/typeProduct";
 
 type Props = {
-  cart: Product[];
+  cart: typeProduct[];
   removeFromCart: (id: number) => void;
 };
 
@@ -31,7 +31,7 @@ const Cart = ({ cart, removeFromCart }: Props) => {
               </div>
               <button
                 onClick={() => removeFromCart(item.id)}
-                className="ml-auto bg-red-500 text-white px-3 py-1 rounded"
+                className="ml-auto bg-red-500 text-white px-3 py-1 rounded cursor-pointer"
               >
                 Remove
               </button>

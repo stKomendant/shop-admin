@@ -12,7 +12,7 @@ const Navbar = ({ cartCount }: Props) => {
       </Link>
 
       <Link to="/cart">
-        <button className="bg-violet-600 text-white px-4 py-2 rounded">
+        <button className="cursor-pointer bg-violet-600 text-white px-4 py-2 rounded">
           Cart ({cartCount})
         </button>
       </Link>

@@ -1,6 +1,6 @@
-import type { Product } from "@/app/types/product";
+import type { typeProduct } from "@/app/types/typeProduct";
 
-export const products: Product[] = [
+export const products: typeProduct[] = [
   {
     id: 1,
     name: "Headphones",
