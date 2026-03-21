@@ -1,10 +1,11 @@
-import type { Product } from "@/app/types/product";
+import type { Product } from "../../types/product";
 
 type Props = {
   product: Product;
+  addToCart: (product: Product) => void;
 };
 
-const ProductCard = ({ product }: Props) => {
+const ProductCard = ({ product, addToCart }: Props) => {
   return (
     <div className="bg-white p-4 rounded-lg shadow">
       <img src={product.image} className="w-full h-40 object-cover rounded" />
@@ -13,7 +14,10 @@ const ProductCard = ({ product }: Props) => {
 
       <p className="text-violet-600 font-bold">${product.price}</p>
 
-      <button className="mt-3 w-full bg-violet-600 text-white py-2 rounded">
+      <button
+        onClick={() => addToCart(product)}
+        className="mt-3 w-full bg-violet-600 text-white py-2 rounded cursor-pointer"
+      >
         Add to cart
       </button>
     </div>

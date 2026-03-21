@@ -2,11 +2,15 @@ import ProductCard from "@/app/components/ProductCard/ProductCard";
 import { products } from "@/app/data/products";
 import type { Product } from "@/app/types/product";
 
-const Home = () => {
+type Props = {
+  addToCart: (product: Product) => void;
+};
+
+const Home = ({ addToCart }: Props) => {
   return (
     <div className="p-8 grid grid-cols-4 gap-6">
-      {products.map((product: Product) => (
-        <ProductCard key={product.id} product={product} />
+      {products.map((product) => (
+        <ProductCard key={product.id} product={product} addToCart={addToCart} />
       ))}
     </div>
   );
