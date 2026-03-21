@@ -14,6 +14,10 @@ function App() {
     setCart((prev) => [...prev, product]);
   };
 
+  const removeFromCart = (id: number) => {
+    setCart((prev) => prev.filter((item) => item.id !== id));
+  };
+
   return (
     <BrowserRouter>
       <Navbar cartCount={cart.length} />
@@ -21,7 +25,10 @@ function App() {
       <Routes>
         <Route path="/" element={<Home addToCart={addToCart} />} />
 
-        <Route path="/cart" element={<Cart cart={cart} />} />
+        <Route
+          path="/cart"
+          element={<Cart cart={cart} removeFromCart={removeFromCart} />}
+        />
       </Routes>
     </BrowserRouter>
   );
